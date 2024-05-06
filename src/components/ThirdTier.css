@@ -1,0 +1,966 @@
+/* Assuming this CSS is in TableWithChairs.css or any global stylesheet */
+/* Assuming this CSS is in TableWithChairs.css or any global stylesheet */
+/* Assuming this CSS is in TableWithChairs.css or any global stylesheet */
+.background3rd {
+  display: flex; /* Align children horizontally */
+  justify-content: center; /* Center groups horizontally */
+  align-items: start; /* Align groups to the start of the container vertically */
+  gap: 20px; /* Spacing between each group */
+  background-size: cover; /* Cover the entire area of each group */
+  background-repeat: no-repeat; 
+  background-image: url('../media/Tier3Background.png');
+  height: 130vh; 
+  position: relative; 
+  overflow-x: hidden;
+  border: 1px solid black;
+}
+/* CSS for mobile devices */
+@media (max-width: 600px) {
+  .background3rd {
+    min-width: 490vw;
+    min-height: 170vh; /* Sets minimum width to double the viewport width */
+    overflow-x:auto; /* Enables horizontal scrolling */
+    position: relative; /* Relative positioning */
+    /* Other styles you want to apply specifically for mobile */
+  }
+}
+
+.group1 {
+  background-color: rgba(255, 255, 255, 0.8); /* Optional: Make background slightly opaque to highlight group */
+  padding: 20px; /* Padding around the content of each group */
+  border-radius: 8px; /* Optional: Rounded corners for aesthetics */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: Drop shadow for depth */
+}
+
+
+/* Style for the ticket container */
+.ticket {
+  position: relative;
+  margin: 10px 0;
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer; /* Indicates the element is clickable */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.ticket:hover {
+  background-color: #e9e9e9; /* Slightly darker background on hover */
+}
+
+/* Style for the blue dot indicating clickable area */
+
+
+/* Style for the ticket details that appear on click */
+.ticket-details3rd {
+  position: fixed; /* Use fixed or absolute positioning as needed */
+  z-index: 10001; /* Ensure this is higher than any other z-index values */
+  width: 80%; /* You can adjust the width as necessary */
+  max-width: 400px; /* Max width to ensure it doesn't get too wide on larger screens */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust to center exactly */
+  padding: 10px;
+  background-color: #ffffff; /* White background for details */
+  border-radius: 6px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+  /* Additional styling */
+}
+
+
+.ticket-details3rd h3 {
+  margin-top: 0;
+  color: #333; /* Dark color for the title */
+}
+
+.ticket-details3rd p {
+  margin: 5px 0; /* Vertical spacing between paragraphs */
+  line-height: 1.5; /* Improved readability */
+  color: #666; /* Medium gray text */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+  .ticket {
+      padding: 10px;
+  }
+
+  .ticket-details3rd {
+      padding: 8px;
+  }
+}
+
+.ticket.sold {
+  background-color: #000; /* Black background for sold tickets */
+  color: #fff; /* White text color for better readability */
+}
+
+.ticket:hover {
+  background-color: #e9e9e9;
+}
+
+.ticket.sold:hover {
+  background-color: #333; /* Darker grey for hover state on sold tickets */
+}
+.orange-dot {
+  width: 20px;  /* Size of the dot */
+  height: 20px; /* Size of the dot */
+  border-radius: 10%; /* Makes the dot circular */
+  background-color: #e7aa38; /* The color of the dot */
+  cursor: pointer; /* Indicates the dot is clickable */
+  margin-bottom: 10px;border: 1px solid #000000; /* Spacing below the dot */
+}
+.cart3rd {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  width: 300px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  z-index: 1000;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.cart3rd h4 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.cart3rd ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cart3rd-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.cart3rd-item-info {
+  flex-grow: 1;
+}
+
+.item-name {
+  display: block;
+  font-weight: bold;
+  color: #555;
+}
+
+.item-type {
+  display: block;
+  font-size: 0.8em;
+  color: #888;
+}
+
+.remove-button {
+  background-color: #ff6347; /* Tomato red */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.remove-button:hover {
+  background-color: #e5533b; /* Darker shade for hover effect */
+}
+
+/* Adjust the position for mobile devices */
+@media (max-width: 600px) {
+  .cart3rd {
+      right: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      border-radius: 0;
+  }
+}
+
+
+.orange-dot.sold {
+  background-color: #ff0000; /* Red color indicating the ticket is sold */
+}
+.orange-dot.disabled {
+  background-color: #ccc; /* Gray color indicating the dot is disabled */
+  cursor: not-allowed; /* Cursor to indicate the element is not interactive */
+}
+
+
+
+
+
+.amagroup {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.amagroup1 {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Row 1 */
+.group3rdA1 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+ background-repeat: no-repeat;
+ background-position: center;
+  top: 760px;
+  left: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdB1 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 835px;
+  left: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdC1{
+  width: 100px;
+  height: 100px;
+ position: absolute;
+ top: 910px;
+  left: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdD1 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+ top: 985px;
+ left: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Row 2 */
+.group3rdA2 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 760px;
+  left: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdB2 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 835px;
+  left: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdC2 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 910px;
+  left: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdD2 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+ top: 985px;
+  left: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Row 3 */
+.group3rdA3 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 760px;
+  left: 275px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdB3 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+ top: 835px;
+ left: 275px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdC3 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 910px;
+  left: 275px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdD3 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 985px;
+  left: 275px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Row 4 */
+.group3rdA4 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 760px;
+  left: 365px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdB4 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 835px;
+  left: 365px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdC4 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 910px;
+  left: 365px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdD4 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 985px;
+  left: 365px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Row 5 */
+.group3rdA5 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 760px;
+  left: 505px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdB5 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 835px;
+  left: 505px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdC5 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 910px;
+  left: 505px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdD5 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 985px;
+  left: 505px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Row 6 */
+.group3rdA6 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 760px;
+  left: 640px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdB6 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 835px;
+  left: 640px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdC6 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 910px;
+  left: 640px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Row 7 */
+.group3rdA7 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 760px;
+  left: 735px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdB7 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 835px;
+  left: 735px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdC7 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 910px;
+  left: 735px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Row 8 */
+.group3rdA8 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 760px;
+  left: 830px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdB8 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 835px;
+  left: 830px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdC8 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 910px;
+  left: 830px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Row 9 */
+.group3rdA9 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 760px;
+  left: 925px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdB9 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 835px;
+  left: 925px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdC9 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 910px;
+  left: 925px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Row 10 */
+.group3rdA10 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 760px;
+  left: 1020px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdB10 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 835px;
+  left: 1020px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdC10 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 910px;
+  left: 1020px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Row 11 */
+.group3rdA11 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 760px;
+  left: 1145px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdB11 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 835px;
+  left: 1145px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdC11 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 910px;
+  left: 1145px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdD11 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 985px;
+  left: 1145px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Row 12 */
+.group3rdA12 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 760px;
+  left: 1240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdB12 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 835px;
+  left: 1240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdC12 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 910px;
+  left: 1240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdD12 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 985px;
+  left: 1240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Row 13 */
+.group3rdA13 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 760px;
+  left: 1335px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdB13 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 835px;
+  left: 1335px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdC13 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 910px;
+  left: 1335px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdD13 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 985px;
+  left: 1335px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Row 14 */
+.group3rdA14 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 760px;
+  left: 1430px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdB14 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 835px;
+  left: 1430px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdC14 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 910px;
+  left: 1430px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdD14 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 985px;
+  left: 1430px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Row 15 */
+.group3rdA15 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 760px;
+  left: 1525px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdB15 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 835px;
+  left: 1525px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdC15 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 910px;
+  left: 1525px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdD15 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 985px;
+  left: 1525px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Row 16 */
+.group3rdA16 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 760px;
+  left: 1620px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdB16 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 835px;
+  left: 1620px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdC16 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 910px;
+  left: 1620px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3rdD16 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 985px;
+  left: 1620px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Row 17 */
+.group3rdA17 {
+  width: 100px;
+  height: 100px;
+ position: absolute;
+  top: 760px;
+  left: 1715px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@media (max-width: 600px) {
+  .amatable3rd {
+      width: 25px;
+      height: 25px;
+      margin-left: 11px;
+      margin-bottom: 115px;
+      border-radius: 50%; 
+      background-color: #69971e;
+      border: 1px solid #000000;
+  }
+  .amagroup {
+      width: 100px;
+      height: 100px;
+     
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+ .amatable3rd {
+  width: 25%;
+  height: 25%;
+  font-weight: 600;
+  margin-left: 19px;
+  font-size: 10px;
+  color: #fff;
+  position: relative;
+  margin-top: 121px;
+  margin-right: 25px;
+  padding-top: 4px;
+  padding-left: 16px;
+  border-radius: 50%; 
+  background-color: #087cf0;
+  border: 1px solid #000000;
+  }
+}
+.amadot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;position: absolute;
+}
+
+.amatable3rd {
+  width: 27%;
+  height: 27%;
+  font-weight: 600;
+  margin-left: 10px;
+  color: #fff;
+  padding-top: 4px;
+  padding-left: 4px;
+  border-radius: 50%; 
+  background-color: #36b82a;
+  border: 1px solid #000000;
+}
+/* Positioning each amadot within the amagroup */
+#amagroup1  .amadot:nth-child(1) { top: 6%; left: 38%; }
+#amagroup1 .amadot:nth-child(2) { top: 6%; left: 57%; }
+#amagroup1 .amadot:nth-child(3) { top: 20%; left: 78%; }
+#amagroup1 .amadot:nth-child(4) { top: 40%; left: 78%; }
+#amagroup1 .amadot:nth-child(5) { top: 55%; left: 56%; }
+#amagroup1 .amadot:nth-child(6) { top: 55%; left: 37%; }
+#amagroup1 .amadot:nth-child(7) { top: 20%; left: 15%; }
+#amagroup1 .amadot:nth-child(8) { top: 40%; left: 15%; }
+#amagroup1 .amatable3rd:nth-child(9) { top: 7%; left: 25%; }
+
+#amagroup2 .amadot:nth-child(1) { top: 6%; left: 38%; }
+#amagroup2 .amadot:nth-child(2) { top: 6%; left: 57%; }
+#amagroup2 .amadot:nth-child(3) { top: 20%; left: 78%; }
+#amagroup2 .amadot:nth-child(4) { top: 40%; left: 78%; }
+#amagroup2 .amadot:nth-child(5) { top: 55%; left: 56%; }
+#amagroup2 .amadot:nth-child(6) { top: 55%; left: 37%; }
+#amagroup2 .amadot:nth-child(7) { top: 20%; left: 15%; }
+#amagroup2 .amadot:nth-child(8) { top: 40%; left: 15%; }
+#amagroup2 .amatable3rd:nth-child(9) { top: 7%; left: 25%; }
+
+#amagroup3 .amadot:nth-child(1) { top: 6%; left: 38%; }
+#amagroup3 .amadot:nth-child(2) { top: 6%; left: 57%; }
+#amagroup3 .amadot:nth-child(3) { top: 20%; left: 78%; }
+#amagroup3 .amadot:nth-child(4) { top: 40%; left: 78%; }
+#amagroup3 .amadot:nth-child(5) { top: 55%; left: 56%; }
+#amagroup3 .amadot:nth-child(6) { top: 55%; left: 37%; }
+#amagroup3 .amadot:nth-child(7) { top: 20%; left: 15%; }
+#amagroup3 .amadot:nth-child(8) { top: 40%; left: 15%; }
+#amagroup3 .amatable3rd:nth-child(9) { top: 7%; left: 25%; }
+
+.bars-container {
+  display: flex; /* Align children (bars) in a row */
+  justify-content: center; /* Center the items horizontally */
+  align-items: center; /* Align items vertically */
+  gap: 20px; /* Space between each bar */position: absolute;
+  top: 165px;
+  left: 600px; /* Centralize the container */
+  transform: translateX(-50%); /* Adjust horizontal position */
+  font-family: Arial, sans-serif; /* Assuming Arial, modify as needed */
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  width: 100%; 
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.bar-number {
+  font-weight: bold;
+  margin-right: 5px;
+  border: 2px solid black;
+  padding: 0px 90px; /* Adjusted to provide spacing around the text */
+}
+
+.bar-line {
+  flex-grow: 1; /* Ensures line fills remaining space */
+  height: 12px; /* Thickness of the line */
+  background-color: black;
+  margin-left: 15px; /* Adds space between number and line */
+  border: none; /* In case you do not want a border around the line */
+}
+

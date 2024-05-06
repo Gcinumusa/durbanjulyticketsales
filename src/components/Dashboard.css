@@ -1,0 +1,27 @@
+.ticket-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap onto the next line */
+    gap: 16px; /* Adds space between the items */
+    justify-content: flex-start; /* Aligns items to the start of the container */
+  }
+  
+  .ticket-item {
+    flex: 0 1 calc(33.333% - 16px); /* Set the basis for each item to one third of the container width, minus the gap */
+    border: 1px solid #ccc; /* Just for visualization */
+    padding: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 4px;
+  }
+  
+  @media (max-width: 768px) {
+    .ticket-item {
+      flex: 0 1 calc(50% - 16px); /* Make tickets take half the width on smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .ticket-item {
+      flex: 0 1 100%; /* Make tickets full width on the smallest screens */
+    }
+  }
+  

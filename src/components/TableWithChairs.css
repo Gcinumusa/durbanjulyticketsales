@@ -1,0 +1,1004 @@
+.floorplan{
+  position: absolute;
+  bottom: 180px;
+  left: 20px;
+  border-radius: 10px;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  position: relative;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+}
+/* Assuming this CSS is in TableWithChairs.css or any global stylesheet */
+.background {
+  display: flex;
+  flex-wrap: nowrap; /* Prevents wrapping, essential for horizontal scrolling */
+  overflow-x: auto; /* Enables horizontal scrolling */
+  overflow-y: hidden; /* Prevents vertical scrolling if not needed */
+  white-space: nowrap; /* Ensures that children don't wrap onto new lines */
+  align-items: start; /* Aligns items at the start vertically */
+  gap: 20px;
+  min-height: 100vh;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('../media/background.png');
+  border: 1px solid black;
+  padding-top: 300px;
+}
+
+/* CSS for mobile devices */
+@media (max-width: 600px) {
+    .background {
+      min-width: 450vw; /* Sets minimum width to double the viewport width */
+      overflow-x: auto; /* Enables horizontal scrolling */
+      position: relative; /* Relative positioning */
+      /* Other styles you want to apply specifically for mobile */
+    }
+
+    .floorplan{
+      position: absolute;
+      bottom: -40px;
+    }
+  }
+  
+.group1 {
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: Make background slightly opaque to highlight group */
+    padding: 20px; /* Padding around the content of each group */
+    border-radius: 8px; /* Optional: Rounded corners for aesthetics */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: Drop shadow for depth */
+}
+
+
+/* Style for the ticket container */
+.ticket {
+    position: relative;
+    margin: 10px 0;
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Indicates the element is clickable */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.ticket:hover {
+    background-color: #e9e9e9; /* Slightly darker background on hover */
+}
+
+/* Style for the blue dot indicating clickable area */
+
+
+/* Style for the ticket details that appear on click */
+.ticket-details {
+  position: relative;
+  z-index: 1050; /* High z-index to ensure it's on top of other content */
+  width: 80%;
+  min-width: 200px; /* Adjust max-width for better sizing on larger screens */
+  top: 50%;
+  left: 50%;
+  padding: 20px;
+  transform: translate(-50%, -50%);
+  background-color: #ece0e0;
+  border-radius: 10px; /* Rounded corners for a softer look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow for depth */
+  overflow: hidden; /* Ensures no internal content spills out */
+  border: 1px solid #ffffff; /* Subtle border for refined edge */
+}
+
+/* Close button styling */
+.ticket-details-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: 1.5em; /* Larger font size for clear visibility */
+  color: #aaa; /* Subtle color */
+}
+
+.ticket-details-close:hover {
+  color: #f00; /* Color change on hover for better user feedback */
+}
+
+.ticket-details h3 {
+  margin-top: 0;
+  margin-bottom: 10px; /* More space below the header */
+  color: #333;
+  font-size: 1.4em; /* Larger font size for titles */
+}
+
+.ticket-details p {
+  margin: 5px 0;
+  line-height: 1.6; /* More readable line spacing */
+  color: #555; /* Slightly darker for better readability */
+  font-size: 1em; /* Standard font size for body text */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+  .ticket-details {
+      width: 45%; /* More screen utilization on small devices */
+      padding: 15px; /* Slightly less padding to save space */
+      border-radius: 8px;
+      margin-left: 100px; /* Adjust corner radius to fit smaller screens */
+  }
+}
+
+
+.ticket.sold {
+    background-color: #000; /* Black background for sold tickets */
+    color: #fff; /* White text color for better readability */
+}
+
+.ticket:hover {
+    background-color: #e9e9e9;
+}
+
+.ticket.sold:hover {
+    background-color: #333; /* Darker grey for hover state on sold tickets */
+}
+.blue-dot {
+    width: 20px;  /* Size of the dot */
+    height: 20px; /* Size of the dot */
+    border-radius: 10%; /* Makes the dot circular */
+    background-color: #3861e7; /* The color of the dot */
+    cursor: pointer; /* Indicates the dot is clickable */
+    margin-bottom: 10px;border: 1px solid #000000; /* Spacing below the dot */
+}
+.cart {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    width: 300px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1000;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.cart h4 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cart ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item-info {
+    flex-grow: 1;
+}
+
+.item-name {
+    display: block;
+    font-weight: bold;
+    color: #555;
+}
+
+.item-type {
+    display: block;
+    font-size: 0.8em;
+    color: #888;
+}
+.remove-icon {
+  background-color: #000; /* Tomato red */
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.remove-icon:hover {
+  background-color: #0e0e0e; /* Darker shade for hover effect */
+}
+.remove-button {
+    background-color: #000; /* Tomato red */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+}
+
+.remove-button:hover {
+    background-color: #0e0e0e; /* Darker shade for hover effect */
+}
+.cart-total {
+  display: flex; /* Enables flexbox layout */
+  justify-content: space-between; /* Positions children at both ends */
+  align-items: center; /* Vertically aligns items in the middle */
+  padding-left: 10px; /* Adds some padding around the content */
+}
+.cart-next {
+  background-color: #000; /* Tomato red */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.cart-next:hover {
+  background-color: #0e0e0e; /* Darker shade for hover effect */
+}
+/* Adjust the position for mobile devices */
+@media (max-width: 600px) {
+    .cart {
+        right: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        border-radius: 0;
+    }
+}
+
+
+.blue-dot.sold {
+    background-color: #ff0000; /* Red color indicating the ticket is sold */
+}
+.blue-dot.disabled {
+    background-color: #ccc; /* Gray color indicating the dot is disabled */
+    cursor: not-allowed; /* Cursor to indicate the element is not interactive */
+}
+
+
+
+
+.tickets-tableA8 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;position: absolute; /* Change from relative to absolute */
+    top: 187px;
+    left: 123px;
+    background-color: #66ff00;
+    
+    border: 1px solid #000000;
+}
+.amagroup {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .amagroup1 {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA1 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+   background-repeat: no-repeat;
+   background-position: center;
+    top: 150px;
+    left: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA2 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 237px;
+    left: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA3{
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 320px;
+    left: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA4 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 400px;
+    left: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .groupA5 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 237px;
+    left: 175px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA6 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 320px;
+    left: 175px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA7 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 400px;
+    left: 175px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA8 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 237px;
+    left: 305px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA9 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 320px;
+    left: 305px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA10 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 400px;
+    left: 305px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA11 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 237px;
+    left: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA12 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 320px;
+    left: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA13 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 400px;
+    left: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA14 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 237px;
+    left: 495px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA15 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 320px;
+    left: 495px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA16 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 400px;
+    left: 495px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA17 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 237px;
+    left: 590px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA18 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 320px;
+    left: 590px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA19 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 400px;
+    left: 590px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA20 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 237px;
+    left: 685px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA21 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 320px;
+    left: 685px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA22 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 400px;
+    left: 685px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA23 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 237px;
+    left: 780px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA24 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 320px;
+    left: 780px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA25 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 400px;
+    left: 780px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA26 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 237px;
+    left: 875px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA27 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 320px;
+    left: 875px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA28 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 400px;
+    left: 875px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA29 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 237px;
+    left: 970px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA30 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 320px;
+    left: 970px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } 
+  .groupA31 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 400px;
+    left: 970px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA32 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 237px;
+    left: 1065px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA33 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 320px;
+    left: 1065px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA34 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 400px;
+    left: 1065px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA35 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 237px;
+    left: 1160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA36 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 320px;
+    left: 1160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA37 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 400px;
+    left: 1160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA38 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 237px;
+    left: 1255px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA39 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 320px;
+    left: 1255px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA40 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 400px;
+    left: 1255px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA41 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 237px;
+    left: 1350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA42 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 320px;
+    left: 1350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA43 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 400px;
+    left: 1350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA44 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 237px;
+    left: 1445px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA45 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 320px;
+    left: 1445px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA46 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 400px;
+    left: 1445px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA47 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 237px;
+    left: 1540px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA48 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 320px;
+    left: 1540px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA49 {
+    width: 100px;
+    height: 100px;
+   position: absolute;
+    top: 400px;
+    left: 1540px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }/* */
+  .groupA50 {
+    width: 100px;
+    height: 100px;position: absolute;
+    top: 150px;
+    left: 850px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } 
+  .groupA51 {
+    width: 100px;
+    height: 100px;position: absolute;
+    top: 150px;
+    left: 945px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA52 {
+    width: 100px;
+    height: 100px;position: absolute;
+    top: 150px;
+    left: 1040px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } 
+  .groupA53 {
+    width: 100px;
+    height: 100px;position: absolute;
+    top: 150px;
+    left: 1135px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } 
+  .groupA54 {
+    width: 100px;
+    height: 100px;position: absolute;
+    top: 150px;
+    left: 1230px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA55 {
+    width: 100px;
+    height: 100px;position: absolute;
+    top: 150px;
+    left: 1325px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } 
+  .groupA56 {
+    width: 100px;
+    height: 100px;position: absolute;
+    top: 150px;
+    left: 1420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupA57 {
+    width: 100px;
+    height: 100px;position: absolute;
+    top: 150px;
+    left: 1515px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } 
+  @media (max-width: 600px) {
+    .amatable {
+        width: 25px;
+        height: 25px;
+        margin-left: 11px;
+        margin-bottom: 115px;
+        border-radius: 50%; 
+        background-color: #69971e;
+        border: 1px solid #000000;
+    }
+    .amagroup {
+        width: 100px;
+        height: 100px;
+       
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+   .amatable {
+    width: 25%;
+    height: 25%;
+    font-weight: 600;
+    margin-left: 19px;
+    font-size: 10px;
+    color: #fff;
+    position: relative;
+    margin-top: 121px;
+    margin-right: 25px;
+    padding-top: 4px;
+    padding-left: 16px;
+    border-radius: 50%; 
+    background-color: #087cf0;
+    border: 1px solid #000000;
+    }
+}
+  .amadot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;position: absolute;
+  }
+  
+  .amatable {
+    width: 27%;
+    height: 27%;
+    font-weight: 600;
+    margin-left: 10px;
+    color: #fff;
+    padding-top: 4px;
+    padding-left: 4px;
+    border-radius: 50%; 
+    background-color: #087cf0;
+    border: 1px solid #000000;
+}
+  /* Positioning each amadot within the amagroup */
+  #amagroup1  .amadot:nth-child(1) { top: 6%; left: 38%; }
+  #amagroup1 .amadot:nth-child(2) { top: 6%; left: 57%; }
+  #amagroup1 .amadot:nth-child(3) { top: 20%; left: 78%; }
+  #amagroup1 .amadot:nth-child(4) { top: 40%; left: 78%; }
+  #amagroup1 .amadot:nth-child(5) { top: 55%; left: 56%; }
+  #amagroup1 .amadot:nth-child(6) { top: 55%; left: 37%; }
+  #amagroup1 .amadot:nth-child(7) { top: 20%; left: 15%; }
+  #amagroup1 .amadot:nth-child(8) { top: 40%; left: 15%; }
+  #amagroup1 .amatable:nth-child(9) { top: 7%; left: 25%; }
+  
+  #amagroup2 .amadot:nth-child(1) { top: 6%; left: 38%; }
+  #amagroup2 .amadot:nth-child(2) { top: 6%; left: 57%; }
+  #amagroup2 .amadot:nth-child(3) { top: 20%; left: 78%; }
+  #amagroup2 .amadot:nth-child(4) { top: 40%; left: 78%; }
+  #amagroup2 .amadot:nth-child(5) { top: 55%; left: 56%; }
+  #amagroup2 .amadot:nth-child(6) { top: 55%; left: 37%; }
+  #amagroup2 .amadot:nth-child(7) { top: 20%; left: 15%; }
+  #amagroup2 .amadot:nth-child(8) { top: 40%; left: 15%; }
+  #amagroup2 .amatable:nth-child(9) { top: 7%; left: 25%; }
+  
+  #amagroup3 .amadot:nth-child(1) { top: 6%; left: 38%; }
+  #amagroup3 .amadot:nth-child(2) { top: 6%; left: 57%; }
+  #amagroup3 .amadot:nth-child(3) { top: 20%; left: 78%; }
+  #amagroup3 .amadot:nth-child(4) { top: 40%; left: 78%; }
+  #amagroup3 .amadot:nth-child(5) { top: 55%; left: 56%; }
+  #amagroup3 .amadot:nth-child(6) { top: 55%; left: 37%; }
+  #amagroup3 .amadot:nth-child(7) { top: 20%; left: 15%; }
+  #amagroup3 .amadot:nth-child(8) { top: 40%; left: 15%; }
+  #amagroup3 .amatable:nth-child(9) { top: 7%; left: 25%; }
+  
+  .bars-container {
+    display: flex; /* Align children (bars) in a row */
+    justify-content: center; /* Center the items horizontally */
+    align-items: center; /* Align items vertically */
+    gap: 20px; /* Space between each bar */position: absolute;
+    top: 165px;
+    left: 600px; /* Centralize the container */
+    transform: translateX(-50%); /* Adjust horizontal position */
+    font-family: Arial, sans-serif; /* Assuming Arial, modify as needed */
+  }
+  
+  .bar {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    width: 100%; 
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
+  
+  .bar-number {
+    font-weight: bold;
+    margin-right: 5px;
+    border: 2px solid black;
+    padding: 0px 90px; /* Adjusted to provide spacing around the text */
+  }
+  
+  .bar-line {
+    flex-grow: 1; /* Ensures line fills remaining space */
+    height: 12px; /* Thickness of the line */
+    background-color: black;
+    margin-left: 15px; /* Adds space between number and line */
+    border: none; /* In case you do not want a border around the line */
+  }
+  
+  

@@ -1,0 +1,54 @@
+.row {
+    display: flex; /* Use flexbox to arrange table areas in a row */
+    justify-content: flex-start;
+    margin-top: 55px; /* This adds space at the top of each row */
+  }
+
+  .row:first-child {
+    margin-top: 0; /* No space for the first row */
+  }
+  .table-area {
+    display: inline-flex; /* Change to inline-flex so table areas sit side by side */
+    position: relative;
+    padding: 10px;
+    margin-left: 30px; /* Provide some spacing between the table areas */
+  }
+
+  .table {
+    width: 50px;
+    height: 50px;
+    background-color: #0080ff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative; /* Changed from absolute to relative */
+  }
+
+  .chair {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #000000;
+    background-color: #0080ff;
+    position: absolute; /* Keep as absolute to position in relation to the table */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+
+  /* Position chairs closer to table by adjusting left and top values */
+  .chair1 { left: 10px; top: -20px; }
+  .chair2 { left: 40px; top: -20px; }
+  .chair3 { left: 60px; top: 10px; }
+  .chair4 { left: 60px; top: 40px; }
+  .chair5 { left: 40px; top: 60px; }
+  .chair6 { left: 10px; top: 60px; }
+  .chair7 { left: -20px; top: 40px; }
+  .chair8 { left: -20px; top: 10px; }
+
+  /* Add a left margin to the second table area to move it next to the first one */
+  .table-area + .table-area {
+    margin-left: 40px; /* Adjust this value as needed to space out the tables */
+  }

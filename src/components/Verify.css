@@ -1,0 +1,59 @@
+/* Verify.module.css */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    background-color: #f7f7f7;
+    font-family: 'Arial', sans-serif;
+}
+.mylabel{
+    width: 20%;
+    text-align: center;
+    justify-content: center; /* Align items horizontally */
+    align-items: center; /* Align items vertically */
+    margin-bottom: 10px;
+}
+.title {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.inputField {
+    font-size: 16px;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    width: 300px; /* Set a fixed width for the input */
+}
+
+.button {
+    background-color: #0c0c0c;
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;width: 300px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #303030;
+}
+
+.errorMessage {
+    color: #ff0000;
+    margin-top: 10px;
+}
+@media (max-width: 768px) {
+    .container {
+        min-height: 80vh;
+    }
+  
+    .mylabel, .inputField, .button {
+        width: 100%; /* Full width on smaller devices */
+    }
+}

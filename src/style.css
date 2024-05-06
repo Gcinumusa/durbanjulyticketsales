@@ -1,0 +1,56 @@
+.navbar {
+    background-color: #ffffffb7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  .nav-links, .auth-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    padding-top: 12px; /* Adjust the space between links as needed */
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #fff; /* Adjust the color to match your design */
+    font-weight: bold;
+  }
+  .auth-links {
+    margin-left: auto; /* This will push the auth links to the end of the navbar */
+  }
+  .nav-link.active {
+    border-bottom: 2px solid #fff; /* Highlight the active link */
+  }
+  @media screen and (max-width: 768px) {
+    .nav-links {
+      display: none; /* Hide the nav links on mobile by default */
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .navbar {
+      flex-direction: column;
+    }
+  
+    .menu-toggle {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    .menu-toggle span {
+      display: block;
+      width: 25px; /* Adjust the width as needed */
+      height: 3px; /* Adjust the height as needed */
+      background-color: #fff;
+    }
+  
+    .menu-toggle.active + .nav-links {
+      display: flex; /* Show the nav links when the menu button is active */
+    }
+  }
+  

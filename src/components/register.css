@@ -1,0 +1,130 @@
+.register-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    background-color: #f0f0f0;
+  }
+  
+  .register-form {
+    width: 100%;
+    max-width: 500px;
+    background: #fff;
+    padding: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin: 2rem;
+  }
+  
+  .register-form h1 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 2rem;
+  }
+  
+  .register-form input[type="text"],
+  .register-form input[type="email"],
+  .register-form input[type="password"] {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .register-form button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+  
+  .register-form .error {
+    color: red;
+    font-size: 0.9rem;
+  }
+  
+  .register-form .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .register-form .modal-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+  }
+  
+  .register-form .modal-content span {
+    display: block;
+    margin-bottom: 1rem;
+  }
+  
+  .register-form .modal-content input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .register-form .modal-content button {
+    padding: 0.6rem 1.2rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Add more styles as per the exact design requirements */
+  
+  .register-input {
+    width: 100%; /* Full width */
+    padding: 12px 20px; /* Padding for input */
+    margin: 8px 0; /* Space between inputs */
+    display: inline-block; /* Allows for margins and padding */
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Include padding and border in input width */
+    font-size: 16px; /* Larger font size for better readability */
+    background-color: white; /* White background */
+    transition: border-color 0.3s; /* Smooth transition for hover effects */
+  }
+  
+  .register-input:focus {
+    outline: none; /* Removes the default focus outline */
+    border-color: #6658D3; /* Changes the border color when input is focused */
+    box-shadow: 0 0 8px 0 rgba(102,88,211,0.2); /* Adds a subtle glow effect */
+  }
+  .form-group {
+    display: flex;
+    gap: 1rem; /* Adjust the gap as needed */
+  }
+  
+  .form-group input {
+    flex: 1; /* Each input will take up equal space */
+  }
+  .register-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+  }
+  
+  .register-image img {
+    max-width: 100%;
+    height: auto;/* If you want rounded corners */
+  }
